@@ -1,6 +1,6 @@
 require "csvn/version"
 
-class Csvn
+module Csvn
   def initialize
     @a = 1
     @b = 2
