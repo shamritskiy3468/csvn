@@ -24,12 +24,19 @@ Or install it yourself as:
 ### Base description of instance variables
 
 `file_name` - source file name for reading (absolute or relative path should be provided)
+
 `file_extension` - file extension
+
 `data` - file data rows (as array when readed and array of hashes after .smart_convert! method)
+
 `smart_convert` - convert readed data in array of hashes with file headers keys - false by default
+
 `file_headers` - file headers array
+
 `read_flag` - service flag to see if data already readed
+
 `output` - output file name with extension to use .write method
+
 
 ### read data
 
