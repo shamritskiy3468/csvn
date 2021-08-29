@@ -22,19 +22,18 @@ Or install it yourself as:
 
 
 ### Base description of instance variables
-```
-# file_name - source file name for reading (absolute or relative path should be provided)
-# file_extension - file extension
-# data - file data rows (as array when readed and array of hashes after .smart_convert! method)
-# smart_convert - convert readed data in array of hashes with file headers keys - false by default
-# file_headers - file headers array
-# read_flag - service flag to see if data already readed
-# output - output file name with extension to use .write method
-```
+
+`file_name` - source file name for reading (absolute or relative path should be provided)
+`file_extension` - file extension
+`data` - file data rows (as array when readed and array of hashes after .smart_convert! method)
+`smart_convert` - convert readed data in array of hashes with file headers keys - false by default
+`file_headers` - file headers array
+`read_flag` - service flag to see if data already readed
+`output` - output file name with extension to use .write method
 
 ### read data
 
-Can read data with all standart separators (iterating over DefaultConstants::COL_SEPS - ["\t", ",", ";", " ", "|", ":"])
+Can read data with all standart separators (iterating over DefaultConstants::COL_SEPS - `["\t", ",", ";", " ", "|", ":"]`)
 
 ```
 csv_instance = CSVFile.new(file_name: "export_for_saller.csv") # create new instance
@@ -49,7 +48,7 @@ csv_instance.smart_convert! - convert readed data into array of hashes with file
 csv_instance.write(data_to_write: data, headers: headers) # write data in file with name provided with @destination instance variables
 ```
 
-`data - may be array of arrays or array of hashes -> will be automaticly converted while writing. If data is array of hashes - headers will be extracted from first data hash. Else - headers must be provided mannually.`
+`data` - may be array of arrays or array of hashes -> will be automaticly converted while writing. If data is array of hashes - headers will be extracted from first data hash. Else - headers must be provided mannually.
 
 ## Development
 
