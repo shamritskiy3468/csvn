@@ -1,8 +1,6 @@
 # Csvn
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csvn`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is my first gem for simple and more convinient work with csv files (especially for csv exports from DB). 
 
 ## Installation
 
@@ -22,7 +20,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+### Base description of instance variables
+
+`file_name` - source file name for reading (absolute or relative path should be provided)
+
+`file_extension` - file extension
+
+`data` - file data rows (as array when readed and array of hashes after .smart_convert! method)
+
+`smart_convert` - convert readed data in array of hashes with file headers keys - false by default
+
+`file_headers` - file headers array
+
+`read_flag` - service flag to see if data already readed
+
+`output` - output file name with extension to use .write method
+
+
+### read data
+
+Can read data with all standart separators (iterating over DefaultConstants::COL_SEPS - `["\t", ",", ";", " ", "|", ":"]`)
+
+```
+csv_instance = CSVFile.new(file_name: "export_for_saller.csv") # create new instance
+csv_instance.info # show stat about file
+csv_instance.read # read file data - return array of arrays - allow to read file 
+csv_instance.smart_convert! - convert readed data into array of hashes with file headers keys
+```
+
+### write data
+
+```
+csv_instance.write(data_to_write: data, headers: headers) # write data in file with name provided with @destination instance variables
+```
+
+`data` - may be array of arrays or array of hashes -> will be automaticly converted while writing. If data is array of hashes - headers will be extracted from first data hash. Else - headers must be provided mannually.
 
 ## Development
 
@@ -32,8 +65,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at hhttps://github.com/shamritskiy3468/csvn. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/shamritskiy3468/csvn/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/shamritskiy3468/csvn. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/shamritskiy3468/csvn/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -41,4 +73,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Csvn project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/csvn/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Csvn project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/shamritskiy3468/csvn/blob/master/CODE_OF_CONDUCT.md).
