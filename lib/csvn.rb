@@ -11,8 +11,6 @@ class CSVFile
 
   # initializer method for CSVFile
   def initialize(file_name: nil, file_extension: DefaultConstants::EXTENSION, convert: false, output: DefaultConstants::FILE_PATTERN)
-    raise StandardError unless file_name
-
     @file_name = file_name                ### source file name (full path should be provided)
     @file_extension = file_extension      ### file extension
     @data = []                            ### file rows data
