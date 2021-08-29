@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["shamritskiy3468"]
   spec.email         = ["sshamritskiy3468@gmail.com"]
 
-  spec.summary       = %q{Simple attemp to simplify routine work with CSV file.}
-  spec.description   = %q{Too lazy to write something, so use summary please :) }
+  spec.summary       = %q{Attemp to simplify routine work with CSV files (such as DB request result)}
+  spec.description   = %q{My simple gem for work with .csv data files. Can read data from files with any separator and allow work with them more comfortable.}
   spec.homepage      = "https://github.com/shamritskiy3468/csvn"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
