@@ -41,7 +41,6 @@ class CSVFile
     return if @read_flag
 
     process_reading
-    info
   end
 
   # Write data in file (named by pattern - may be found in DefaultConstants::FILE_PATTERN)
@@ -190,7 +189,7 @@ class CSVFile
   end
 
   def open_and_read_file
-    raise "No file name specified for reading data. Set file name with #{self.class}.file_name = <value>"
+    raise "No file name specified for reading data. Set file name with #{self.class}.file_name = <value>" unless @file_name
     DefaultConstants::COL_SEPS.each do |separator|
       begin
         @file_col_sep = separator
