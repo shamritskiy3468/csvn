@@ -57,7 +57,7 @@ class CSVFile
   end
 
   # Only for string row values
-  # will be improved to be able to handle more complex selecting like SQL does
+  # will be improved to be able to handle more complex selecting like SQL does ----> multiple select
   def select(opts = {})
     return @data.select { |row| row[opts[:where]] =~ /#{opts[:like]}/ } if opts[:like]
     return @data.select { |row| row[opts[:where]] !~ /#{opts[:not_like]}/ } if opts[:not_like]
