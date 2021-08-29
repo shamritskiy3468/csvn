@@ -57,6 +57,37 @@ csv_instance.write(data_to_write: data, headers: headers) # write data in file w
 
 `data` - may be array of arrays or array of hashes -> will be automaticly converted while writing. If data is array of hashes - headers will be extracted from first data hash. Else - headers must be provided mannually.
 
+### processing data
+
+Help to select data rows by condition
+
+#### .select
+```
+csv_instance.select(where: "name", like: "mary") # return array of hashes matched by condition
+```
+Will be improved soon - need to implement ability to select by several conditions with AND | OR constructions
+
+#### .sort
+```
+csv_instance.sort(by: "number", apply: :to_i) # (:apply - optional) - sort array of hashes by number key and with .to_i applied to current value
+```
+
+#### .min
+```
+csv_instance.min(by: "dest_value", apply: :to_f) # (:apply - optional) search min value with .to_f applied to current value
+```
+
+#### .max
+```
+csv_instance.max(by: "dest_value", apply: :to_f) # (:apply - optional) search max value with .to_f applied to current value
+```
+
+#### .mean
+```
+csv_instance.mean(by: "dest_value", apply: :to_f) # s(:apply - optional) earch mean value with .to_f applied to current value
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
