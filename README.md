@@ -1,4 +1,4 @@
-# Csvn
+# CFilesHelper
 
 This is my first gem for simple and more convinient work with csv files (especially for csv exports from DB). 
 
